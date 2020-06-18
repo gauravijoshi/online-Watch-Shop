@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="text-left">
+            My Orders
+        </h1>
+
+        <table class="table table-bordered table-hover ">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Product Qty</th>
+                    <th>Product Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr  *ngFor="let i of order; let m = index">
+                  
+                    <td>{{m+1}}</td>
+                    <td>{{i.name}}</td>
+
+                    <td>
+                        <img width="50px" height="50px" src="http://localhost:3006/{{i.image}}" alt="">
+                    </td>
+                    <td>{{i.count}}</td>
+                    <td>{{i.price}}</td>
+                    
+                    <td>{{i.count * i.price }}</td>
+                    <td>
+                        {{final_total}} Rs
+                    </td>
+
+                </tbody>
+           
+
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 ">
+  
+
+        <button class="btn btn-success float-right mr-8">
+            Click to know the status of your order
+        </button>
+    </div>
+</div>

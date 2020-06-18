@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 600px; 
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="row">
+  <div class="column" style="background-color:rgb(238, 226, 226);">
+    
+    <img width="550px" height="450px" src="http://localhost:3006/{{products.productImagePath}}" alt="">
+
+  </div>
+  <div class="column" style="background-color:rgb(238, 226, 226);">
+    <h3 style="text-align: center;">TITAN ORIGINAL PRODUCT</h3>
+    <br>
+    <h3 style="text-align: center;">
+        Name : {{products.name}}
+        <br>
+        Category :    {{products.category.name}}
+        <br>
+        Price :  {{products.price}}Rs.
+        <br>
+        Stock :  {{products.stock}}
+        <br>
+        Description :     {{products.description}}
+        <br>
+        <br>
+        Qty : <select style="text-align: center;"  #ingre_qty>
+
+            <option>Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br><br><br>
+
+
+        <button (click)="addTocart()" style="background-color:pink;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px; "> ADD TO CART </button>
+    </h3>
+  </div>
+</div>
+
+</body>
+</html>
